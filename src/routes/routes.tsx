@@ -1,12 +1,24 @@
 /* eslint-disable react-refresh/only-export-components */
-import {type RouteObject } from 'react-router-dom';
+import {Navigate, type RouteObject } from 'react-router-dom';
 import MainPage from '../pages/MainPage';
 import { LoginPage } from '../pages/LoginPage/LoginPage';
 import OfferPage from '../pages/OfferPage';
 import FavoritesPage from '../pages/FavoritesPage';
 import NotFoundPage from '../pages/NotFoundPage';
+import { ReactNode } from 'react';
 
 type Routes = 'main' | 'notFound' | 'login' | 'offer' | 'favorites';
+
+export enum AuthStatus {
+  Auth = 'AUTH',
+  NoAuth = 'NO_AUTH',
+  Unknown = 'UNKNOWN',
+}
+
+type PrivateRouteProps = {
+  authStatus: AuthStatus;
+  children: ReactNode;
+}
 
 export const RoutePath: Record<Routes, string> = {
   main: '/',
@@ -17,6 +29,14 @@ export const RoutePath: Record<Routes, string> = {
 };
 
 const {main, notFound, login, offer, favorites} = RoutePath;
+
+function PrivateRoute({authStatus, children}: PrivateRouteProps): ReactNode {
+  return (
+    authStatus === AuthStatus.Auth
+      ? children
+      : <Navigate to={login} />
+  );
+}
 
 export const routeConfig: RouteObject[] = [
   {
@@ -33,7 +53,7 @@ export const routeConfig: RouteObject[] = [
   },
   {
     path: favorites,
-    element: <FavoritesPage />,
+    element: <PrivateRoute authStatus={AuthStatus.NoAuth}><FavoritesPage /></PrivateRoute>
   },
   {
     path: notFound,
