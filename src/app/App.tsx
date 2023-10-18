@@ -1,3 +1,7 @@
+import { AppRouter } from '../providers/RouterProvider';
+
 export default function App() {
-  return <h1>Hello, World!</h1>;
+  return (
+    <AppRouter />
+  );
 }
