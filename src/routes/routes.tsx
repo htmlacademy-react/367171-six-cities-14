@@ -1,13 +1,12 @@
-/* eslint-disable react-refresh/only-export-components */
-import {Navigate, type RouteObject } from 'react-router-dom';
+import {type RouteObject } from 'react-router-dom';
 import MainPage from '../pages/MainPage';
-import { LoginPage } from '../pages/LoginPage/LoginPage';
+import { LoginPage } from '../pages/LoginPage/Login-Page';
 import OfferPage from '../pages/OfferPage';
 import FavoritesPage from '../pages/FavoritesPage';
 import NotFoundPage from '../pages/NotFoundPage';
-import { ReactNode } from 'react';
+import PrivateRoute from '../shared/hocs/PrivateRoute';
 
-type Routes = 'main' | 'notFound' | 'login' | 'offer' | 'favorites';
+// type Routes = 'main' | 'notFound' | 'login' | 'offer' | 'favorites';
 
 export enum AuthStatus {
   Auth = 'AUTH',
@@ -15,48 +14,33 @@ export enum AuthStatus {
   Unknown = 'UNKNOWN',
 }
 
-type PrivateRouteProps = {
-  authStatus: AuthStatus;
-  children: ReactNode;
-}
-
-export const RoutePath: Record<Routes, string> = {
-  main: '/',
-  notFound: '*',
-  login: '/login',
-  offer: '/offer/:id',
-  favorites: 'favorites'
-};
-
-const {main, notFound, login, offer, favorites} = RoutePath;
-
-function PrivateRoute({authStatus, children}: PrivateRouteProps): ReactNode {
-  return (
-    authStatus === AuthStatus.Auth
-      ? children
-      : <Navigate to={login} />
-  );
+export enum RoutePath {
+  main ='/',
+  notFound = '*',
+  login = '/login',
+  offer = '/offer/:id',
+  favorites ='favorites'
 }
 
 export const routeConfig: RouteObject[] = [
   {
-    path: main,
+    path: RoutePath.main,
     element: <MainPage />,
   },
   {
-    path: login,
+    path: RoutePath.login,
     element: <LoginPage />,
   },
   {
-    path: offer,
+    path: RoutePath.offer,
     element: <OfferPage />,
   },
   {
-    path: favorites,
+    path: RoutePath.favorites,
     element: <PrivateRoute authStatus={AuthStatus.NoAuth}><FavoritesPage /></PrivateRoute>
   },
   {
-    path: notFound,
+    path: RoutePath.notFound,
     element: <NotFoundPage />,
   },
 ];
