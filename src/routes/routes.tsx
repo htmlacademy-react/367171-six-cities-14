@@ -1,10 +1,10 @@
-import {type RouteObject } from 'react-router-dom';
-import MainPage from '../pages/MainPage';
-import { LoginPage } from '../pages/LoginPage/Login-Page';
-import OfferPage from '../pages/OfferPage';
-import FavoritesPage from '../pages/FavoritesPage';
-import NotFoundPage from '../pages/NotFoundPage';
-import PrivateRoute from '../shared/hocs/PrivateRoute';
+import {NotFoundPage} from '../pages/NotFoundPage/Not-Found-Page';
+import {FavoritesPage} from '../pages/FavoritesPage/Favorites-Page';
+import {RouteObject} from 'react-router-dom';
+import {OfferPage} from '../pages/OfferPage/Offer-Page';
+import {PrivateRoute} from '../shared/hocs/PrivateRoute/Private-Route';
+import {LoginPage} from '../pages/LoginPage/Login-Page';
+import {MainPage} from '../pages/MainPage/Main-Page';
 
 // type Routes = 'main' | 'notFound' | 'login' | 'offer' | 'favorites';
 
