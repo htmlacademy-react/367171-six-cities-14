@@ -1,4 +1,4 @@
-export const Tabs = () => (
+export const TabsNav = () => (
   <div className="tabs">
     <section className="locations container">
       <ul className="locations__list tabs__list">
