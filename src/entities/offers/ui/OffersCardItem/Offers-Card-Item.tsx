@@ -1,7 +1,7 @@
 import { FC } from 'react';
 import { OfferListItemProps } from '../../types';
 import { RoutePath } from '../../../../routes/routes';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, previewImage, type, rating, isPremium}) => {
 
@@ -12,10 +12,7 @@ export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, preview
 
   const ratingStars = `${Math.round(rating) / 5 * 100}%`;
 
-  const handleClick = (evt: Event) => {
-    evt.preventDefault();
-    navigate(RoutePath.offer.replace(':id', String(id)));
-  };
+  const handleClick = () => navigate(RoutePath.offer.replace(':id', String(id)));
 
   return (
     <article className="cities__card place-card">
@@ -49,7 +46,7 @@ export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, preview
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#" onClick={handleClick}>{title}</a>
+          <Link to={RoutePath.offer} onClick={handleClick}>{title}</Link>
         </h2>
         <p className="place-card__type">{typeRoom}</p>
       </div>
