@@ -2,6 +2,7 @@ import { FC } from 'react';
 import Sorting from '../../../../features/Sorting';
 import { OfferListItemProps } from '../../types';
 
+// здесь тоже проблема типизации для data. IDE подсвечивает, что она any
 export const OffersList:FC<OfferListItemProps[]> = ({data}) => (
   <section className="cities__places places">
     <h2 className="visually-hidden">Places</h2>
