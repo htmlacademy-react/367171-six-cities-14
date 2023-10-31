@@ -1,4 +1,6 @@
-export const offers = [
+import { OfferListItemProps } from '../types';
+
+export const offers: OfferListItemProps[] = [
   {
     'city': {
       'name': 'Dusseldorf',
