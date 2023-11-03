@@ -1,1 +1,12 @@
-export const MainPage = () => <h1>Главная страница</h1>;
+import Tabs from '../../features/Tabs';
+import {Header} from '../../widgets/Header/Header';
+
+export const MainPage = () => (
+  <div className="page page--gray page--main">
+    <Header/>
+    <main className="page__main page__main--index">
+      <h1 className="visually-hidden">Cities</h1>
+      <Tabs/>
+    </main>
+  </div>
+);
