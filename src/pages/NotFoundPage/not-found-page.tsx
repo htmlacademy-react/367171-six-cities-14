@@ -1,7 +1,7 @@
+import {RoutePath} from '../../routes/routes';
+import {Link} from 'react-router-dom';
 import {Header} from '../../widgets/Header/header';
 import {Footer} from '../../widgets/Footer/footer';
-import {RoutePath} from "../../routes/routes";
-import {Link} from "react-router-dom";
 
 export const NotFoundPage = () => (
   <div className="page">

@@ -1,22 +1,14 @@
 import classnames from 'classnames';
-import { FC, useRef} from 'react';
+import { FC} from 'react';
 import { LocationItemProps } from '../../types';
+import './location-item.css';
 
-export const LocationItem: FC<LocationItemProps> = ({activeKey, id, title, onClick}) => {
-
-  const locationRef = useRef(null);
-
-  return (
-    <li className="locations__item">
-      <a id={String(id)}
-        ref={locationRef}
-        className={classnames('locations__item-link tabs__item', {['tabs__item--active']: activeKey === id})}
-        href="#"
-        // как верно описать тип у ссылки?
-        onClick={onClick}
-      >
-        <span>{title}</span>
-      </a>
-    </li>
-  );
-};
+export const LocationItem: FC<LocationItemProps> = ({activeKey, id, title, onClick}) => (
+  <li className="locations__item">
+    <button id={String(id)}
+      className={classnames('locations__item-link tabs__item', {['tabs__item--active']: activeKey === id})} onClick={onClick}
+    >
+      {title}
+    </button>
+  </li>
+);

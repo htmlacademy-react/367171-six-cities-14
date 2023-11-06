@@ -1,10 +1,10 @@
-import { FC, MouseEventHandler} from 'react';
+import { FC} from 'react';
 import LocationItem from '../../../entities/location/ui/LocationItem';
 
 type TabsNav = {
   activeKey: number;
   defaultActiveKey: number;
-  onClick: MouseEventHandler<HTMLAnchorElement>;
+  onClick: (evt: MouseEvent) => void;
   items: {
     id: number;
     title: string;

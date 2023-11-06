@@ -1,18 +1,14 @@
 import { FC } from 'react';
 import { OfferListItemProps } from '../../types';
 import { RoutePath } from '../../../../routes/routes';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, previewImage, type, rating, isPremium}) => {
-
-  const navigate = useNavigate();
 
   //FIXME: на следующем шаге вынести в отдельные функции и константы в отдельном файле + написать тесты на функции
   const typeRoom = `${type[0].toUpperCase()}${type.slice(1)}`;
 
   const ratingStars = `${Math.round(rating) / 5 * 100}%`;
-
-  const handleClick = () => navigate(RoutePath.offer.replace(':id', String(id)));
 
   return (
     <article className="cities__card place-card">
@@ -46,7 +42,7 @@ export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, preview
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={RoutePath.offer} onClick={handleClick}>{title}</Link>
+          <Link to={`${RoutePath.offers}/${id}`}>{title}</Link>
         </h2>
         <p className="place-card__type">{typeRoom}</p>
       </div>

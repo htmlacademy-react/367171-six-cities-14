@@ -18,6 +18,7 @@ export enum RoutePath {
   main ='/',
   notFound = '*',
   login = '/login',
+  offers = '/offer',
   offer = '/offer/:id',
   favorites ='favorites'
 }
