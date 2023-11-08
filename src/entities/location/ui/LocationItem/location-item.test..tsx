@@ -15,6 +15,7 @@ describe('Component: LocationItem', () => {
     expect(screen.getByRole('button')).toBeInTheDocument();
     expect(screen.getByRole('button')).toHaveClass('tabs__item--active');
     expect(screen.getByRole('li')).toHaveClass('locations__item');
+    expect(mockHandleClick).toBeCalledTimes(1);
   });
   it('should render correctly not active class', () => {
     const mockActiveKey = 2;

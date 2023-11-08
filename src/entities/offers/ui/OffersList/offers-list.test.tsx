@@ -19,7 +19,6 @@ describe('Component: OfferCardItem', () => {
     render(withHistory(<OffersCardItem {...mockItem}/>));
 
     expect(screen.getByText(mockItem.title)).toBeInTheDocument();
-    expect(mockItem.price).toBe(171);
     expect(screen.getByText(mockPremium)).toBeInTheDocument();
     expect(screen.getByText('Room')).toBeInTheDocument();
     expect(screen.getByRole('button')).toHaveClass('place-card__bookmark-button--active');
