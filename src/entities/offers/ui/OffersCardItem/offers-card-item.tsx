@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { OfferListItemProps } from '../../types';
 import { RoutePath } from '../../../../routes/routes';
 import { Link } from 'react-router-dom';
-import classnames from "classnames";
+import classnames from 'classnames';
 
 export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, previewImage, type, rating, isPremium, isFavorite}) => {
 
@@ -30,7 +30,8 @@ export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, preview
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className={classnames('place-card__bookmark-button button ', {['place-card__bookmark-button--active']: isFavorite})}
-            type="button">
+            type="button"
+          >
             <svg className="place-card__bookmark-icon" width="18" height="19">
               <use xlinkHref="#icon-bookmark"></use>
             </svg>

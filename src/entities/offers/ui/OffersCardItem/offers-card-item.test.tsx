@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react';
-import {OffersCardItem} from "./offers-card-item";
-import {withHistory} from "../../../../routes/history-route";
+import {OffersCardItem} from './offers-card-item';
+import {withHistory} from '../../../../routes/history-route';
 
 describe('Component: OfferCardItem', () => {
   it('should render correctly', () => {

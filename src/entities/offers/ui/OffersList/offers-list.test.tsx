@@ -1,7 +1,6 @@
 import {render, screen} from '@testing-library/react';
-import {OffersCardItem} from "./offers-card-item";
-import {withHistory} from "../../../../routes/history-route";
-import {OffersList} from "./offers-list";
+import {withHistory} from '../../../../routes/history-route';
+import {OffersList} from './offers-list';
 
 describe('Component: OffersList', () => {
   it('should render correctly', () => {
@@ -251,11 +250,11 @@ describe('Component: OffersList', () => {
     ];
 
     const mockText = `${mockData.length} places to stay in Amsterdam`;
-    const offersContainerTestId = 'offers-list';
+    const offersTestId = 'offers-list';
 
     render(withHistory(<OffersList data={mockData}/>));
 
     expect(screen.getByText(mockText)).toBeInTheDocument();
-    expect(screen.getByTestId(offersContainerTestId)).toBeInTheDocument();
+    expect(screen.getByTestId(offersTestId)).toBeInTheDocument();
   });
 });
