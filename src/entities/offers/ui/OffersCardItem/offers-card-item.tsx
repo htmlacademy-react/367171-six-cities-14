@@ -3,13 +3,13 @@ import { OfferListItemProps } from '../../types';
 import { RoutePath } from '../../../../routes/routes';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
+import {getByRatingStars, getByTypeRoom} from "../../utils/utils";
 
 export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, previewImage, type, rating, isPremium, isFavorite}) => {
 
-  //FIXME: на следующем шаге вынести в отдельные функции и константы в отдельном файле + написать тесты на функции
-  const typeRoom = `${type[0].toUpperCase()}${type.slice(1)}`;
+  const typeRoom = getByTypeRoom(type);
 
-  const ratingStars = `${Math.round(rating) / 5 * 100}%`;
+  const ratingStars = getByRatingStars(rating);
 
   return (
     <article className="cities__card place-card">
