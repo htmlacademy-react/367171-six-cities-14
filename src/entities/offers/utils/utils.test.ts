@@ -1,6 +1,6 @@
-import {getByRatingStars, getByTypeRoom} from "./utils";
+import {getByRatingStars, getByTypeRoom} from './utils';
 
-describe("getByTypeRoom", () => {
+describe('getByTypeRoom', () => {
   it('getByTypeRoom', () => {
     const expectedText = getByTypeRoom('apartment');
     const equalText = 'Apartment';
@@ -8,7 +8,7 @@ describe("getByTypeRoom", () => {
   });
 });
 
-describe("getByRatingStars", () => {
+describe('getByRatingStars', () => {
   it('getByRatingStarsInPercent downward', () => {
     const expectedPercent = getByRatingStars(3.1);
     const equalPercent = '60%';
