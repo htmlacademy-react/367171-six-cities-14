@@ -1,1 +1,1 @@
-export {OfferPage as default} from './Offer-Page';
+export {OfferPage as default} from './offer-page';

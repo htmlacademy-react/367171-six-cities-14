@@ -1,4 +1,4 @@
-import { MouseEventHandler, useState } from 'react';
+import { useState } from 'react';
 import TabsContent from './TabsContent';
 import TabsNav from './TabsNav';
 import { LocationItems } from '../../entities/location/constants';
@@ -10,14 +10,9 @@ export const Tabs = () => {
 
   const [isActiveKey, setActiveKey] = useState<number>(defaultActiveKey);
 
-  const handleClick: MouseEventHandler<HTMLAnchorElement> = (evt) => {
-    evt.preventDefault();
-    const element = evt.target as HTMLElement;
-    if (element.tagName === 'SPAN' && element.parentElement) {
-      setActiveKey(Number(element.parentElement.id));
-    }
-    if (element.tagName === 'A') {
-      setActiveKey(Number(element.id));
+  const handleClick = (evt: MouseEvent) => {
+    if (evt.target instanceof HTMLElement) {
+      setActiveKey(Number(evt.target.id));
     }
   };
 

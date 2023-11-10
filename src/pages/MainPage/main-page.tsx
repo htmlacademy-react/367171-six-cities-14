@@ -1,5 +1,5 @@
 import Tabs from '../../features/Tabs';
-import {Header} from '../../widgets/Header/Header';
+import {Header} from '../../widgets/Header/header';
 
 export const MainPage = () => (
   <div className="page page--gray page--main">

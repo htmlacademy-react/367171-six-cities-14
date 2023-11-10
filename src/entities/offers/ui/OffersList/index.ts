@@ -1,1 +1,1 @@
-export {OffersList as default} from './Offers-List';
+export {OffersList as default} from './offers-list';

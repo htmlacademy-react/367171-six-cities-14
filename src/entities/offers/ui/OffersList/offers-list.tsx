@@ -8,7 +8,7 @@ export const OffersList:FC<{data: OfferListItemProps[]}> = ({data}) => (
     <h2 className="visually-hidden">Places</h2>
     <b className="places__found">{data.length} places to stay in Amsterdam</b>
     <Sorting/>
-    <div className="cities__places-list places__list tabs__content">
+    <div className="cities__places-list places__list tabs__content" data-testid="offers-list">
       {data && data.map((item: OfferListItemProps) => <OffersCardItem key={item.id} {...item}/>)}
     </div>
   </section>
