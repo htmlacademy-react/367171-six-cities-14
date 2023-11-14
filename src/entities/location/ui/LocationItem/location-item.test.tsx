@@ -22,7 +22,9 @@ describe('Component: LocationItem', () => {
     const mockId = 1;
     const mockTitle = 'Paris';
 
-    render(<LocationItem id={mockId} title={mockTitle} activeKey={mockActiveKey}/>);
+    const mockHandleClick = vi.fn();
+
+    render(<LocationItem id={mockId} title={mockTitle} activeKey={mockActiveKey} onClick={mockHandleClick}/>);
     expect(screen.getByRole('button')).not.toHaveClass('tabs__item--active');
   });
 });
