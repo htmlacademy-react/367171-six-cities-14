@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { MouseEventHandler, useState } from 'react';
 import TabsContent from './TabsContent';
 import TabsNav from './TabsNav';
 import { LocationItems } from '../../entities/location/constants';
@@ -10,7 +10,7 @@ export const Tabs = () => {
 
   const [isActiveKey, setActiveKey] = useState<number>(defaultActiveKey);
 
-  const handleClick = (evt: MouseEvent) => {
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (evt) => {
     if (evt.target instanceof HTMLElement) {
       setActiveKey(Number(evt.target.id));
     }
