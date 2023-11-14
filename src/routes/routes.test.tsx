@@ -14,12 +14,13 @@ describe('Application Routing', () => {
     const firstCity = 'Paris';
     const sixthCity = 'Dusseldorf';
 
-    render(<HistoryRouter history={history}>
-      <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="/offer/1" element={<OfferPage/>}/>
-      </Routes>
-    </HistoryRouter>
+    render(
+      <HistoryRouter history={history}>
+        <Routes>
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/offer/1" element={<OfferPage/>}/>
+        </Routes>
+      </HistoryRouter>
     );
 
     expect(history.location.pathname).toBe('/');
