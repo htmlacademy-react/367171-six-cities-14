@@ -30,7 +30,7 @@ describe('Application Routing', () => {
 
     // этот тест не проходит
     fireEvent.click(screen.getByText('Waterfront with extraordinary view'));
-    await waitFor(() => expect(window.location.pathname).toBe('/offer/1'));
+    await waitFor(() => expect(history.location.pathname).toBe('/offer/1'));
   });
 
 
