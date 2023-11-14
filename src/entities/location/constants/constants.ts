@@ -7,7 +7,7 @@ export const LocationItems = [
   {id: 6, title: 'Dusseldorf'}
 ];
 
-export const mapLocationItems = {
+export const mapLocationItems: {[key: number]: string} = {
   1: 'Paris',
   2: 'Cologne',
   3: 'Brussels',

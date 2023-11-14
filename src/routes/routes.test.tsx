@@ -9,7 +9,7 @@ import {MainPage} from '../pages/MainPage/main-page';
 import {Route, Routes} from 'react-router-dom';
 
 describe('Application Routing', () => {
-  it('should render "MainScreen" when user navigate to "/"', () => {
+  it('should render "MainScreen" when user navigate to "/"', async () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
     const firstCity = 'Paris';
     const sixthCity = 'Dusseldorf';

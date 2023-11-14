@@ -6,7 +6,7 @@ import {mapLocationItems} from '../../../entities/location/constants/constants';
 
 export const TabsContent: FC<{activeKey: number}> = ({activeKey}) => {
 
-  const currentLocation = mapLocationItems[String(activeKey)];
+  const currentLocation: string = mapLocationItems[activeKey];
   const filteredOffers = useOffersFilter(true, offers, currentLocation);
 
   return (
