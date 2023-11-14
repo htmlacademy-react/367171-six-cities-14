@@ -27,8 +27,8 @@ describe('Component: OfferCardItem', () => {
         'https://14.react.pages.academy/static/offer/19.jpg'
       ],
       'title': 'Amazing and Extremely Central Flat',
-      'isFavorite': false,
-      'isPremium': false,
+      'isFavorite': true,
+      'isPremium': true,
       'rating': 4.7,
       'type': 'room',
       'bedrooms': 1,
@@ -55,7 +55,7 @@ describe('Component: OfferCardItem', () => {
     render(withHistory(<OffersCardItem {...mockItem}/>));
 
     expect(screen.getByText(mockItem.title)).toBeInTheDocument();
-    expect(mockItem.price).toBe(171);
+    expect(mockItem.price).toBe(236);
     expect(screen.getByText(mockPremium)).toBeInTheDocument();
     expect(screen.getByText('Room')).toBeInTheDocument();
     expect(screen.getByRole('button')).toHaveClass('place-card__bookmark-button--active');
