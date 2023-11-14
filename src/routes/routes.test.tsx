@@ -27,6 +27,8 @@ describe('Application Routing', () => {
     expect(screen.getByText(firstCity)).toBeInTheDocument();
     expect(screen.getByText(sixthCity)).toBeInTheDocument();
 
+    fireEvent.click(screen.getByText('Waterfront with extraordinary view'));
+    await waitFor(() => expect(history.location.pathname).toBe('/offer/1'));
   });
 
   it('should render "AuthScreen" when user navigate to "/login"', () => {
@@ -73,6 +75,5 @@ describe('Application Routing', () => {
 
     fireEvent.click(screen.getByTestId(logoTestId));
     await waitFor(() => expect(window.location.pathname).toBe(rootPath));
-
   });
 });
