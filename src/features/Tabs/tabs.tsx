@@ -10,14 +10,9 @@ export const Tabs = () => {
 
   const [isActiveKey, setActiveKey] = useState<number>(defaultActiveKey);
 
-  const handleClick: MouseEventHandler<HTMLAnchorElement> = (evt) => {
-    evt.preventDefault();
-    const element = evt.target as HTMLElement;
-    if (element.tagName === 'SPAN' && element.parentElement) {
-      setActiveKey(Number(element.parentElement.id));
-    }
-    if (element.tagName === 'A') {
-      setActiveKey(Number(element.id));
+  const handleClick: MouseEventHandler<HTMLButtonElement> = (evt) => {
+    if (evt.target instanceof HTMLElement) {
+      setActiveKey(Number(evt.target.id));
     }
   };
 

@@ -1,1 +1,1 @@
-export {Sorting as default} from './Sorting';
+export {Sorting as default} from './sorting';

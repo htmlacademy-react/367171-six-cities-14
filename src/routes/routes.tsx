@@ -1,10 +1,10 @@
-import {NotFoundPage} from '../pages/NotFoundPage/Not-Found-Page';
-import {FavoritesPage} from '../pages/FavoritesPage/Favorites-Page';
+import {NotFoundPage} from '../pages/NotFoundPage/not-found-page';
+import {FavoritesPage} from '../pages/FavoritesPage/favorites-page';
 import {RouteObject} from 'react-router-dom';
-import {OfferPage} from '../pages/OfferPage/Offer-Page';
-import {PrivateRoute} from '../shared/hocs/PrivateRoute/Private-Route';
-import {LoginPage} from '../pages/LoginPage/Login-Page';
-import {MainPage} from '../pages/MainPage/Main-Page';
+import {OfferPage} from '../pages/OfferPage/offer-page';
+import {PrivateRoute} from '../shared/hocs/PrivateRoute/private-route';
+import {LoginPage} from '../pages/LoginPage/login-page';
+import {MainPage} from '../pages/MainPage/main-page';
 
 // type Routes = 'main' | 'notFound' | 'login' | 'offer' | 'favorites';
 
@@ -18,6 +18,7 @@ export enum RoutePath {
   main ='/',
   notFound = '*',
   login = '/login',
+  offers = '/offer',
   offer = '/offer/:id',
   favorites ='favorites'
 }

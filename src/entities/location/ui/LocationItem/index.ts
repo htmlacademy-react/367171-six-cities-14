@@ -1,1 +1,1 @@
-export {LocationItem as default} from './Location-Item';
+export {LocationItem as default} from './location-item';

@@ -1,1 +1,1 @@
-export {TabsContent as default} from './Tabs-Content';
+export {TabsContent as default} from './tabs-content';

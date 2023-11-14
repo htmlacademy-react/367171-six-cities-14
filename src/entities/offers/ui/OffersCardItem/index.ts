@@ -1,1 +1,1 @@
-export {OffersCardItem as default} from './Offers-Card-Item';
+export {OffersCardItem as default} from './offers-card-item';

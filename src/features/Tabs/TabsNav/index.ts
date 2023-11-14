@@ -1,1 +1,1 @@
-export {TabsNav as default} from './Tabs-Nav';
+export {TabsNav as default} from './tabs-nav';
