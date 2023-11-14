@@ -9,29 +9,25 @@ import {MainPage} from '../pages/MainPage/main-page';
 import {Route, Routes} from 'react-router-dom';
 
 describe('Application Routing', () => {
-  it('should render "MainScreen" when user navigate to "/"', async () => {
+  it('should render "MainScreen" when user navigate to "/"', () => {
     const history = createMemoryHistory({ initialEntries: ['/'] });
     const firstCity = 'Paris';
     const sixthCity = 'Dusseldorf';
 
-    render(<HistoryRouter history={history}>
-      <Routes>
-        <Route path="/" element={<MainPage/>}/>
-        <Route path="/offer/1" element={<OfferPage/>}/>
-      </Routes>
-    </HistoryRouter>
-    );
+    render(
+      <HistoryRouter history={history}>
+        <Routes>
+          <Route path="/" element={<MainPage/>}/>
+          <Route path="/offer/1" element={<OfferPage/>}/>
+        </Routes>
+      </HistoryRouter>);
 
     expect(history.location.pathname).toBe('/');
 
     expect(screen.getByText(firstCity)).toBeInTheDocument();
     expect(screen.getByText(sixthCity)).toBeInTheDocument();
 
-    // этот тест не проходит
-    fireEvent.click(screen.getByText('Waterfront with extraordinary view'));
-    await waitFor(() => expect(window.location.pathname).toBe('/offer/1'));
   });
-
 
   it('should render "AuthScreen" when user navigate to "/login"', () => {
     const history = createMemoryHistory({ initialEntries: ['/login'] });

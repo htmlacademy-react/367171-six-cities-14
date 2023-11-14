@@ -6,3 +6,14 @@ export const LocationItems = [
   {id: 5, title: 'Hamburg'},
   {id: 6, title: 'Dusseldorf'}
 ];
+
+export const mapLocationItems = {
+  1: 'Paris',
+  2: 'Cologne',
+  3: 'Brussels',
+  4: 'Amsterdam',
+  5: 'Hamburg',
+  6: 'Dusseldorf'
+};
+
+export const DEFAULT_LOCATION = 'Paris';

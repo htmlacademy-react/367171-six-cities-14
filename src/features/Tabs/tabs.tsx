@@ -8,7 +8,7 @@ export const Tabs = () => {
   //FIXME: вынести в константы, когда переключение табов будет полностью
   const defaultActiveKey = 1;
 
-  const [isActiveKey, setActiveKey] = useState<number>(defaultActiveKey);
+  const [currentActiveKey, setActiveKey] = useState<number>(defaultActiveKey);
 
   const handleClick = (evt: MouseEvent) => {
     if (evt.target instanceof HTMLElement) {
@@ -18,8 +18,8 @@ export const Tabs = () => {
 
   return (
     <>
-      <TabsNav items={LocationItems} activeKey={isActiveKey} defaultActiveKey={defaultActiveKey} onClick={handleClick}/>
-      <TabsContent/>
+      <TabsNav items={LocationItems} activeKey={currentActiveKey} defaultActiveKey={defaultActiveKey} onClick={handleClick}/>
+      <TabsContent activeKey={currentActiveKey}/>
     </>
   );
 };
