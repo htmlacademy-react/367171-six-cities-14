@@ -18,7 +18,7 @@ describe('Application Routing', () => {
       <HistoryRouter history={history}>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
-          <Route path="/offer/1" element={<OfferPage/>}/>
+          <Route path="/offer/32" element={<OfferPage/>}/>
         </Routes>
       </HistoryRouter>);
 
@@ -28,7 +28,7 @@ describe('Application Routing', () => {
     expect(screen.getByText(sixthCity)).toBeInTheDocument();
 
     fireEvent.click(screen.getByText('Waterfront with extraordinary view'));
-    await waitFor(() => expect(history.location.pathname).toBe('/offer/1'));
+    await waitFor(() => expect(history.location.pathname).toBe('/offer/32'));
   });
 
   it('should render "AuthScreen" when user navigate to "/login"', () => {

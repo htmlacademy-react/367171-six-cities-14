@@ -249,10 +249,11 @@ describe('Component: OffersList', () => {
       },
     ];
 
-    const mockText = `${mockData.length} places to stay in Amsterdam`;
+    const mockCity = 'Dusseldorf';
+    const mockText = `${mockData.length} places to stay in ${mockCity}`;
     const offersTestId = 'offers-list';
 
-    render(withHistory(<OffersList data={mockData}/>));
+    render(withHistory(<OffersList data={mockData} currentLocation={mockCity}/>));
 
     expect(screen.getByText(mockText)).toBeInTheDocument();
     expect(screen.getByTestId(offersTestId)).toBeInTheDocument();

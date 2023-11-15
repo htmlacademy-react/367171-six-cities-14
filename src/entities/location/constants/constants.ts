@@ -17,3 +17,4 @@ export const mapLocationItems: {[key: number]: string} = {
 };
 
 export const DEFAULT_LOCATION = 'Paris';
+export const DEFAULT_LOCATION_KEY = 1;

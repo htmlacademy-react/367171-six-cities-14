@@ -45,7 +45,7 @@ export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, preview
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`${RoutePath.offers}/${id}`}>{title}</Link>
+          <Link to={`${RoutePath.offers}/${id}`} className="place-card__link">{title}</Link>
         </h2>
         <p className="place-card__type">{typeRoom}</p>
       </div>
