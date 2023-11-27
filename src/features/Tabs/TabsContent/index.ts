@@ -1,1 +1,1 @@
-export {TabsContent as default} from './tabs-content';
+export {TabsContent as default} from './tabs-content.tsx';

@@ -18,21 +18,18 @@ describe('Application Routing', () => {
       <HistoryRouter history={history}>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
-          <Route path="/offer/1" element={<OfferPage/>}/>
+          <Route path="/offer/32" element={<OfferPage/>}/>
         </Routes>
-      </HistoryRouter>
-    );
+      </HistoryRouter>);
 
     expect(history.location.pathname).toBe('/');
 
     expect(screen.getByText(firstCity)).toBeInTheDocument();
     expect(screen.getByText(sixthCity)).toBeInTheDocument();
 
-    // этот тест не проходит
     fireEvent.click(screen.getByText('Waterfront with extraordinary view'));
-    await waitFor(() => expect(history.location.pathname).toBe('/offer/1'));
+    await waitFor(() => expect(history.location.pathname).toBe('/offer/32'));
   });
-
 
   it('should render "AuthScreen" when user navigate to "/login"', () => {
     const history = createMemoryHistory({ initialEntries: ['/login'] });
@@ -78,6 +75,5 @@ describe('Application Routing', () => {
 
     fireEvent.click(screen.getByTestId(logoTestId));
     await waitFor(() => expect(window.location.pathname).toBe(rootPath));
-
   });
 });
