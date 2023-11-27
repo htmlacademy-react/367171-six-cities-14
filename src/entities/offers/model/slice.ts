@@ -1,13 +1,8 @@
-import {OfferListItemProps} from "../types";
-import {createSlice} from "@reduxjs/toolkit";
-import {fetchOffersListAction} from "./action.ts";
-export type OffersListStateProps = {
-  items: OfferListItemProps[] | undefined;
-  isLoading: boolean;
-  isError: boolean;
-}
+import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import {fetchOffersListAction} from './action.ts';
+import {OffersFilterStateProps, OffersListStateProps} from './types.ts';
 
-const initialState: OffersListStateProps = {
+const initialStateOffersList: OffersListStateProps = {
   items: undefined,
   isLoading: false,
   isError: false,
@@ -15,7 +10,7 @@ const initialState: OffersListStateProps = {
 
 export const offersSlice = createSlice({
   name: 'offers/list',
-  initialState,
+  initialState: initialStateOffersList,
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchOffersListAction.fulfilled, (state, action) => {
@@ -31,3 +26,19 @@ export const offersSlice = createSlice({
     });
   },
 });
+
+const initialStateOffersFilter: OffersFilterStateProps = {
+  countOffers: 0,
+};
+
+export const offersFilterSlice = createSlice({
+  name: 'offers/filter',
+  initialState: initialStateOffersFilter,
+  reducers: {
+    countOffers: (state, action: PayloadAction<{countOffers: number}>) => {
+      state.countOffers = action.payload.countOffers;
+    },
+  },
+});
+
+export const {countOffers} = offersFilterSlice.actions;

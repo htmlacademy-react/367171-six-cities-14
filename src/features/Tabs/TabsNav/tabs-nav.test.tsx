@@ -1,5 +1,5 @@
 import {render, screen} from '@testing-library/react';
-import {withHistory} from '../../../../routes/history-route.tsx';
+import {withHistory} from '../../../routes/history-route.tsx';
 import {TabsNav} from './tabs-nav.tsx';
 
 describe('Component: TabsNav', () => {

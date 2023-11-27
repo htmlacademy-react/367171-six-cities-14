@@ -1,5 +1,5 @@
 import axios, {AxiosInstance} from 'axios';
-import {store} from "../../providers/store-provider.tsx";
+import {store} from '../../providers/store-provider.tsx';
 
 export type State = ReturnType<typeof store.getState>;
 

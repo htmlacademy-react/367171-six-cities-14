@@ -1,5 +1,5 @@
 import { FC, MouseEventHandler} from 'react';
-import LocationItem from '../../../../entities/location/ui/LocationItem';
+import LocationItem from '../../../entities/location/ui/LocationItem';
 
 type TabsNav = {
   activeKey: number;

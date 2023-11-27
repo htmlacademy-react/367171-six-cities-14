@@ -1,10 +1,9 @@
 import {useEffect, useState} from 'react';
-import {DEFAULT_LOCATION} from '../../location/constants/constants';
-import {OfferListItemProps} from '../types/types';
-import {getByCityOffers} from '../utils/utils';
-import {useAppDispatch, useAppSelector} from "../../../providers/store-provider.tsx";
-import {getOffers} from "../model/selectors.ts";
-import {countOffers} from "../../../features/Tabs/model/slice.ts";
+import {useAppDispatch, useAppSelector} from '../../../providers';
+import {OfferListItemProps} from '../types';
+import {DEFAULT_LOCATION} from '../../location/constants';
+import {countOffers, getOffers} from '../model';
+import {getByCityOffers} from '../utils';
 
 export const useOffersFilter = (currentLocation: string) => {
   const [filteredData, setFilteredData] = useState<OfferListItemProps[]>([]);
@@ -27,11 +26,11 @@ export const useOffersFilter = (currentLocation: string) => {
 
   useEffect(() => {
     if (offers && currentCity) {
-      const filteredOffers = getByCityOffers(offers, currentCity)
+      const filteredOffers = getByCityOffers(offers, currentCity);
       setFilteredData(filteredOffers);
       dispatch(countOffers({countOffers: filteredOffers.length }));
     }
-  }, [offers, currentCity, setFilteredData]);
+  }, [offers, currentCity, setFilteredData, dispatch]);
 
   return filteredData;
 };

@@ -1,5 +1,5 @@
 import {renderHook} from '@testing-library/react';
-import {useOffersFilter} from './useOffersFilter.ts';
+import {useOffersFilter} from './useOffersFilter';
 describe('Hook: useOffersFilter', () => {
   it('should return empty array', () => {
 

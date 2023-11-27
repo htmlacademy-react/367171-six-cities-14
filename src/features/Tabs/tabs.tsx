@@ -1,7 +1,7 @@
 import {MouseEventHandler, useState} from 'react';
 import TabsContent from './TabsContent';
 import TabsNav from './TabsNav';
-import {DEFAULT_LOCATION_KEY, LocationItems} from '../../../entities/location/constants';
+import {DEFAULT_LOCATION_KEY, LocationItems} from '../../entities/location/constants';
 
 export const Tabs = () => {
 

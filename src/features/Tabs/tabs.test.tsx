@@ -1,6 +1,6 @@
 import {render, screen} from '@testing-library/react';
 import {Tabs} from './tabs.tsx';
-import {withHistory} from '../../../routes/history-route.tsx';
+import {withHistory} from '../../routes/history-route.tsx';
 
 describe('Component: Tabs', () => {
   it('should render correctly', () => {
