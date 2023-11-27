@@ -1,2 +1,2 @@
-export {StoreProvider} from './StoreProvider/StoreProvider';
-export {AppRouter} from './RouterProvider/RouterProvider';
+export {StoreProvider} from './StoreProvider';
+export {AppRouter} from './RouterProvider';
