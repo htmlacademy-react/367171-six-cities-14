@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import { OfferListItemProps } from '../../types';
-import { RoutePath } from '../../../../routes/routes';
 import { Link } from 'react-router-dom';
 import classnames from 'classnames';
-import {getByRatingStars, getByTypeRoom} from '../../utils/utils';
+import {getByRatingStars, getByTypeRoom} from '../../utils';
+import {RoutePath} from '../../../../routes/routes';
 
 export const OffersCardItem:FC<OfferListItemProps> = ({id, price, title, previewImage, type, rating, isPremium, isFavorite}) => {
 

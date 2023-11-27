@@ -1,2 +1,2 @@
-export * from './router-provider.tsx';
-export * from './store-provider.tsx';
+export {StoreProvider} from './StoreProvider/StoreProvider';
+export {AppRouter} from './RouterProvider/RouterProvider';

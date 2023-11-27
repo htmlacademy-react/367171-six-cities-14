@@ -1,10 +1,10 @@
 import {createAsyncThunk} from '@reduxjs/toolkit';
 import {OfferListItemProps} from '../types';
-import {AppDispatch} from '../../../providers/store-provider.tsx';
-import {APIRoute, State} from '../../../shared/api/api.ts';
 import {AxiosInstance} from 'axios/index';
+import {AppDispatch, State} from '../../../providers/StoreProvider/store';
+import {APIRoute} from '../../../providers/StoreProvider/constants';
 
-export const fetchOffersListAction = createAsyncThunk<OfferListItemProps[], undefined, {
+export const fetchOffersListAction = createAsyncThunk<OfferListItemProps[], {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;

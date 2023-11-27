@@ -1,9 +1,9 @@
 import Tabs from '../../features/Tabs';
 import {Header} from '../../widgets/Header/header';
 import classnames from 'classnames';
-import {useAppSelector} from '../../providers';
 import {getOffersCount} from '../../entities/offers/model';
 import {INIT_COUNT_OFFERS} from '../../entities/offers/utils';
+import {useAppSelector} from '../../providers/StoreProvider/hooks';
 
 export const MainPage = () => {
   const countOffers = useAppSelector(getOffersCount);

@@ -1,9 +1,9 @@
 import {useEffect, useState} from 'react';
-import {useAppDispatch, useAppSelector} from '../../../providers';
 import {OfferListItemProps} from '../types';
 import {DEFAULT_LOCATION} from '../../location/constants';
 import {countOffers, getOffers} from '../model';
 import {getByCityOffers} from '../utils';
+import {useAppDispatch, useAppSelector} from '../../../providers/StoreProvider/hooks';
 
 export const useOffersFilter = (currentLocation: string) => {
   const [filteredData, setFilteredData] = useState<OfferListItemProps[]>([]);
