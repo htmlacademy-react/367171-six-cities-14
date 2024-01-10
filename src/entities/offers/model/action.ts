@@ -4,7 +4,7 @@ import {AppDispatch, State} from '../../../providers/StoreProvider/store';
 import {APIRoute} from '../../../providers/StoreProvider/constants';
 import {AxiosInstance} from 'axios';
 
-export const fetchOffersListAction = createAsyncThunk<OfferListItemProps[], {
+export const fetchOffersListAction = createAsyncThunk<OfferListItemProps[], undefined, {
   dispatch: AppDispatch;
   state: State;
   extra: AxiosInstance;
