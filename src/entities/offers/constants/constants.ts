@@ -4,7 +4,8 @@ export const LocationItems = [
   {id: 3, title: 'Brussels'},
   {id: 4, title: 'Amsterdam'},
   {id: 5, title: 'Hamburg'},
-  {id: 6, title: 'Dusseldorf'}
+  {id: 6, title: 'Dusseldorf'},
+  {id: 7, title: 'Rome'}
 ];
 
 export const mapLocationItems: {[key: number]: string} = {
@@ -13,7 +14,8 @@ export const mapLocationItems: {[key: number]: string} = {
   3: 'Brussels',
   4: 'Amsterdam',
   5: 'Hamburg',
-  6: 'Dusseldorf'
+  6: 'Dusseldorf',
+  7: 'Rome'
 };
 
 export const DEFAULT_LOCATION = 'Paris';

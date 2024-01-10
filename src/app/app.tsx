@@ -1,7 +1,10 @@
-import { AppRouter } from '../providers/router-provider';
+import {AppRouter, StoreProvider} from '../providers';
 
 export default function App() {
   return (
-    <AppRouter />
+    <StoreProvider>
+      <AppRouter />
+    </StoreProvider>
+
   );
 }

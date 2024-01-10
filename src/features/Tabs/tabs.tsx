@@ -1,25 +1,23 @@
-import { MouseEventHandler, useState } from 'react';
+import {MouseEventHandler, useState} from 'react';
 import TabsContent from './TabsContent';
 import TabsNav from './TabsNav';
-import { LocationItems } from '../../entities/location/constants';
+import {DEFAULT_LOCATION_KEY, LocationItems} from '../../entities/location/constants';
 
 export const Tabs = () => {
 
-  //FIXME: вынести в константы, когда переключение табов будет полностью
-  const defaultActiveKey = 1;
-
-  const [isActiveKey, setActiveKey] = useState<number>(defaultActiveKey);
+  const [currentActiveKey, setActiveKey] = useState<number>(DEFAULT_LOCATION_KEY);
 
   const handleClick: MouseEventHandler<HTMLButtonElement> = (evt) => {
     if (evt.target instanceof HTMLElement) {
-      setActiveKey(Number(evt.target.id));
+      const {id} = evt.target;
+      setActiveKey(Number(id));
     }
   };
 
   return (
     <>
-      <TabsNav items={LocationItems} activeKey={isActiveKey} defaultActiveKey={defaultActiveKey} onClick={handleClick}/>
-      <TabsContent/>
+      <TabsNav items={LocationItems} activeKey={currentActiveKey} defaultActiveKey={DEFAULT_LOCATION_KEY} onClick={handleClick}/>
+      <TabsContent activeKey={currentActiveKey}/>
     </>
   );
 };

@@ -1,1 +1,1 @@
-export {TabsNav as default} from './tabs-nav';
+export {TabsNav as default} from './tabs-nav.tsx';
